@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode in Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-arabic: 'Cairo', system-ui, sans-serif;
+    --font-latin: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  [dir="rtl"] {
+    font-family: var(--font-arabic);
+  }
+
+  [dir="ltr"] {
+    font-family: var(--font-latin);
+  }
+
+  /* Support mobile notch and home bar safe area padding */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 1rem);
+  }
+
+  /* Light mode root background and text */
+  html {
+    background-color: #f8fafc;
+    color: #0f172a;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Dark mode root background and text */
+  html.dark {
+    background-color: #080511;
+    color: #f8fafc;
+  }
+}
+
+/* Subtle water animations */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+
+.animate-wiggle {
+  animation: wiggle 1.6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "AH20 Hayat",
+  "description": "تطبيق ذكي لحساب ومتابعة شرب المياه وفقاً للعمر والوزن والطول وفصول السنة مع منبه ونغمات مائية ونظام ثنائي اللغة (عربي وتركي)",
+  "requestFramePermissions": ["notifications"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
